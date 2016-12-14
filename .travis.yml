@@ -5,7 +5,7 @@ addons:
   postgresql: '9.3'
 before_install:
   - openssl aes-256-cbc -K $encrypted_e28298503a52_key -iv $encrypted_e28298503a52_iv -in config/secrets.yml.enc -out config/secrets.yml -d
-  - openssl aes-256-cbc -K $encrypted_b441a627886f_key -iv $encrypted_b441a627886f_iv -in config/initializers/secret_token.rb.enc -out config/initializers/secret_token.rb -d
+  - openssl aes-256-cbc -K $encrypted_b441a627886f_key -iv $encrypted_b441a627886f_iv -in config/initializers/devise.rb.enc -out config/initializers/devise.rb -d
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
